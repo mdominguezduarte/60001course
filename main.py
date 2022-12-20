@@ -3,6 +3,6 @@ import secondlecture
 import thirdlecture
 
 
-thirdlecture.letter_nie()
+thirdlecture.pitagoras_theorem()
 
 
