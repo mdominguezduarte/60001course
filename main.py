@@ -1,8 +1,9 @@
 # This is a sample Python script.
 import secondlecture
 import thirdlecture
+import fourthlecture
 
 
-thirdlecture.pitagoras_theorem()
+print(fourthlecture.sqrt_int(5))
 
 

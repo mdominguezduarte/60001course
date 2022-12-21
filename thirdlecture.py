@@ -1,5 +1,6 @@
 import sys
 import math
+import random
 
 
 # Return the letter of a DNI
@@ -78,6 +79,58 @@ def pitagoras_theorem():
                 print(f"The leg C1:{int(c1)}, the leg C2:{int(c2)} and the hypotenuse:{int(h_abs)} match the theorem.")
                 break
             else:
-                print("Searching...")
+                if c1 == h_abs - 1:
+                    print("Legs are not found")
+                else:
+                    print("Searching...")
 
     print("The search is finished.")
+
+
+# Weight almond function applies approximate solutions
+
+def weight_almond():
+    margin_error = 7  # grams
+    desired_weight = abs(int(input("How many grams of almonds do you want?: ")))
+    approx_weight = abs(random.randint(desired_weight - desired_weight // 2, desired_weight + desired_weight // 2))
+    add_rest = 7
+    number_weight = 0
+    while abs(desired_weight - approx_weight) >= margin_error:
+
+        number_weight += 1
+        print(f"{number_weight}. The weight  {approx_weight} is not approximate enough to {desired_weight}")
+
+        if desired_weight - approx_weight >= margin_error:
+            approx_weight += add_rest
+        else:
+            approx_weight -= add_rest
+
+    print(f"\nThe final weight of almonds is {approx_weight}")
+    print(50*"*", "END", 50*"*")
+
+
+#Weight almond function applying bisection search
+def weight_almond_bisection():
+    margin_error = 7  # grams
+    desired_weight = abs(int(input("How many grams of almonds do you want?: ")))
+    high_limit = desired_weight + desired_weight // 2
+    low_limit = desired_weight - desired_weight // 2
+    approx_weight = abs(random.randint(low_limit, high_limit))
+    number_weight = 0
+    while abs(desired_weight - approx_weight) >= margin_error:
+
+        number_weight += 1
+        print(f"{number_weight}. The weight  {approx_weight} is not approximate enough to {desired_weight}")
+
+        if desired_weight - approx_weight >= margin_error:
+            high_limit = desired_weight
+            low_limit = approx_weight
+        else:
+            high_limit = approx_weight
+            low_limit = desired_weight
+        approx_weight = abs(random.randint(low_limit, high_limit))
+
+    print(f"\nThe final weight of almonds is {approx_weight}")
+    print(50 * "*", "END", 50 * "*")
+
+
