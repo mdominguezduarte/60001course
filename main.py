@@ -1,9 +1,6 @@
 # This is a sample Python script.
-import secondlecture
-import thirdlecture
-import fourthlecture
 
+import eightninethlecture
 
-print(fourthlecture.sqrt_int(5))
-
-
+CardTest = eightninethlecture.Cards("test1", "test_test", "third", 2022, "first")
+CardTest.print_card()
