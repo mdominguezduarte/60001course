@@ -1,9 +1,7 @@
 # This is a sample Python script.
-import secondlecture
-import thirdlecture
-import fourthlecture
+import twelfthlecture
 
-
-print(fourthlecture.sqrt_int(5))
-
-
+try:
+    print(twelfthlecture.return_msg(twelfthlecture.linear_search_unsorted, [1,2,3,5,6,7,8,9,10], 12))
+except:
+    print("There's an incorrect parameter")
